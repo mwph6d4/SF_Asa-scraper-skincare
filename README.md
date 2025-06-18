@@ -51,21 +51,20 @@ Berikut ini adalah fitur-fitur yang ada dalam website Asa Beauty:
 Berikut adalah struktur file dan folder dari proyek ini:
 
 AsaBeauty/
-
-├── .venv/                 
+AsaBeauty/
+├── .venv/
 │   ├── lib/
 │   ├── include/
 │   └── Scripts/
-│   └── ...
-├── scraped_data/          
+│       └── ...
+├── scraped_data/
 │   └── sociolla_wardah_products.csv
-│   └── ...
-├── static/               
+├── static/
 │   └── images/
-│       ├── banner1.jpg    
-│       ├── banner2.jpg   
+│       ├── banner1.jpg
+│       ├── banner2.jpg
 │       └── logoweb.png
-├── templates/           
+├── templates/
 │   ├── layout.html
 │   ├── index.html
 │   ├── login.html
@@ -74,13 +73,13 @@ AsaBeauty/
 │   ├── profile.html
 │   ├── product_detail.html
 │   └── search_results.html
-├── app.py                 
-├── config.py             
-├── extensions.py          
-├── forms.py              
-├── models.py             
-├── routes.py            
-└── scrape.py           
+├── app.py
+├── config.py
+├── extensions.py
+├── forms.py
+├── models.py
+├── routes.py
+└── scrape.py
 
 
 ---
