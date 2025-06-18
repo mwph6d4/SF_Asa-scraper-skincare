@@ -151,7 +151,7 @@ Hapus file database.db di root folder proyek Anda
 rm database.db   # Untuk Linux/macOS
 del database.db  # Untuk Windows
 
-### 5. Jalankan Aplikasi
+### *5. Jalankan Aplikasi*
 Buka terminal VSCode Anda (dengan virtual environment aktif), lalu pastikan direktori sudah benar. Setelah itu jalankan prompt ini.
 
 Bash
