@@ -50,20 +50,20 @@ Berikut ini adalah fitur-fitur yang ada dalam website Asa Beauty:
 
 Berikut adalah struktur file dan folder dari proyek ini:
 AsaBeauty/
-├── .venv/                 # Virtual environment (tersembunyi)
+├── .venv/                 
 │   ├── lib/
 │   ├── include/
 │   └── Scripts/
 │   └── ...
-├── scraped_data/          # Hasil scraping dalam format CSV (opsional)
+├── scraped_data/          
 │   └── sociolla_wardah_products.csv
 │   └── ...
-├── static/                # File statis (CSS, JS, Gambar lokal)
+├── static/               
 │   └── images/
-│       ├── banner1.jpg    # Banner lokal Anda
-│       ├── banner2.jpg    # Banner lokal Anda
+│       ├── banner1.jpg    
+│       ├── banner2.jpg   
 │       └── logoweb.png
-├── templates/             # File HTML Jinja2
+├── templates/           
 │   ├── layout.html
 │   ├── index.html
 │   ├── login.html
@@ -72,13 +72,13 @@ AsaBeauty/
 │   ├── profile.html
 │   ├── product_detail.html
 │   └── search_results.html
-├── app.py                 # File utama aplikasi Flask
-├── config.py              # Konfigurasi aplikasi
-├── extensions.py          # Definisi ekstensi Flask (db, login_manager)
-├── forms.py               # Definisi formulir Flask-WTF
-├── models.py              # Definisi model database (tabel)
-├── routes.py              # Definisi semua rute/endpoint aplikasi
-└── scrape.py              # Fungsi-fungsi web scraping
+├── app.py                 
+├── config.py             
+├── extensions.py          
+├── forms.py              
+├── models.py             
+├── routes.py            
+└── scrape.py           
 
 
 ---
@@ -144,8 +144,8 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokal 
 Sebelum menjalankan aplikasi, hapus database lama untuk memastikan skema terbaru diterapkan dan data baru di-*scrape*.
 
 ```bash
-# Hentikan server Flask jika sedang berjalan (Ctrl+C)
-# Hapus file database.db di root folder proyek Anda
+Hentikan server Flask jika sedang berjalan (Ctrl+C)
+Hapus file database.db di root folder proyek Anda
 rm database.db   # Untuk Linux/macOS
 del database.db  # Untuk Windows
 5. Jalankan Aplikasi
