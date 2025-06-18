@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Daftar Produk</h1>
+
+{% for p in products %}
+  <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+    <h3>{{ p.product_name }}</h3>
+    <p><strong>Brand:</strong> {{ p.brand or '-' }}</p>
+    <p><strong>Harga:</strong> {{ p.product_price or '-' }}</p>
+    <p><strong>Rating:</strong> {{ p.rating or '-' }}</p>
+    <p><strong>Deskripsi:</strong><br> {{ p.description or 'Tidak tersedia' }}</p>
+    <p><strong>Cara Penggunaan:</strong><br> {{ p.usage_instructions or 'Tidak tersedia' }}</p>
+    <p><strong>Komposisi:</strong><br> {{ p.ingredients or 'Tidak tersedia' }}</p>
+  </div>
+{% endfor %}
+
+{% endblock %}

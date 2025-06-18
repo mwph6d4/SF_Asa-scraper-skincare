@@ -1,0 +1,107 @@
+{# templates/compare.html #}
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-pink-800 mb-6 text-center">Bandingkan Produk</h1>
+
+        {% if products|length >= 2 %}
+            <div class="overflow-x-auto"> {# Untuk memungkinkan scroll horizontal jika banyak produk #}
+                <table class="min-w-full bg-white rounded-lg shadow-lg mb-8">
+                    <thead>
+                        <tr class="bg-pink-100 border-b border-pink-200">
+                            <th class="py-3 px-4 text-left text-pink-700 font-semibold uppercase tracking-wider">Fitur</th>
+                            {% for product in products %}
+                                <th class="py-3 px-4 text-center text-pink-700 font-semibold uppercase tracking-wider">
+                                    <div class="flex flex-col items-center">
+                                        {% if product.image_url %}
+                                            <img src="{{ product.image_url }}" alt="{{ product.product_name }}" class="w-24 h-24 object-contain rounded-lg mb-2 shadow">
+                                        {% else %}
+                                            <div class="w-24 h-24 flex items-center justify-center bg-gray-200 text-gray-500 rounded-lg mb-2">
+                                                No Image
+                                            </div>
+                                        {% endif %}
+                                        <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-pink-600 hover:underline font-bold text-lg">
+                                            {{ product.product_name }}
+                                        </a>
+                                    </div>
+                                </th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Harga</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-center">
+                                    {% if product.product_price %}
+                                        <p class="text-pink-700 text-lg font-semibold">{{ product.product_price }}</p>
+                                        {% if product.original_price %}
+                                            <p class="text-gray-500 text-sm line-through">{{ product.original_price }}</p>
+                                        {% endif %}
+                                        {% if product.saved_amount %}
+                                            <p class="text-green-600 text-sm font-semibold">{{ product.saved_amount }}</p>
+                                        {% endif %}
+                                    {% else %}
+                                        <p class="text-gray-500 text-base">Tidak Tersedia</p>
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Brand</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-center">{{ product.brand or '-' }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Rating</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-center">
+                                    {% if product.rating %}
+                                        <span class="text-yellow-500 text-sm"><i class="fas fa-star"></i> {{ product.rating }}</span>
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Website Sumber</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-center">{{ product.source_website or '-' }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Deskripsi</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-sm text-gray-700 text-left whitespace-pre-line">{{ product.description or 'Tidak Tersedia' }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Cara Penggunaan</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-sm text-gray-700 text-left whitespace-pre-line">{{ product.usage_instructions or 'Tidak Tersedia' }}</td>
+                            {% endfor %}
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4 font-semibold text-gray-800">Komposisi/Ingredients</td>
+                            {% for product in products %}
+                                <td class="py-3 px-4 text-sm text-gray-700 text-left whitespace-pre-line">{{ product.ingredients or 'Tidak Tersedia' }}</td>
+                            {% endfor %}
+                        </tr>
+                        {# Tambahkan baris perbandingan lain jika diperlukan #}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="text-center text-gray-600 text-lg mt-10">Pilih minimal 2 produk untuk dibandingkan dari halaman <a href="{{ url_for('home') }}" class="text-pink-500 hover:underline">Home</a> atau <a href="{{ url_for('search') }}" class="text-pink-500 hover:underline">Pencarian</a>.</p>
+        {% endif %}
+
+        <div class="text-center mt-8">
+            <a href="{{ url_for('home') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+            </a>
+        </div>
+    </div>
+{% endblock content %}
