@@ -150,7 +150,8 @@ Hentikan server Flask jika sedang berjalan (Ctrl+C)
 Hapus file database.db di root folder proyek Anda
 rm database.db   # Untuk Linux/macOS
 del database.db  # Untuk Windows
-5. Jalankan Aplikasi
+
+### 5. Jalankan Aplikasi
 Buka terminal VSCode Anda (dengan virtual environment aktif), lalu pastikan direktori sudah benar. Setelah itu jalankan prompt ini.
 
 Bash
@@ -166,14 +167,15 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to exit
 Arahkan kursor pada link http://127.0.0.1:5000, maka akan muncul link server website. Klik dan Anda akan tiba di halaman beranda website.
 
-6. Jalankan Proses Scraping Pertama
+### 6. Jalankan Proses Scraping Pertama
 Karena database baru dan kosong, Anda perlu menjalankan scraping pertama kali untuk mengisi data.
 
 Di browser, navigasikan ke http://127.0.0.1:5000/run_scrape (Anda harus mengetik URL ini secara manual karena tidak ada di navigasi umum).
 Login dengan akun yang sudah Anda buat (jika belum punya, daftar dulu di /register).
 Klik tombol "Jalankan Scraping Sekarang". Proses ini akan memakan waktu. Amati terminal untuk melihat progress-nya.
 Setelah selesai, Anda akan melihat notifikasi "Scraping berhasil!"
-7. Nikmati Website Anda!
+
+### 7. Nikmati Website Anda!
 Sekarang, kembali ke halaman utama http://127.0.0.1:5000/. Anda akan melihat:
 
 Banner Anda tampil dan bisa di-scroll.
