@@ -49,6 +49,7 @@ Berikut ini adalah fitur-fitur yang ada dalam website Asa Beauty:
 ## 📂 Struktur Project
 
 Berikut adalah struktur file dan folder dari proyek ini:
+
 AsaBeauty/
 ├── .venv/                 
 │   ├── lib/
