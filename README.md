@@ -1,0 +1,3 @@
+🌸 Asa Beauty - Web Scraper Kosmetik
+Proyek ini adalah aplikasi web berbasis Flask yang dirancang untuk melakukan *scraping* data produk kosmetik dari situs Sociolla.com. Pengguna dapat mendaftar, melakukan scraping produk dari berbagai merek, menyimpan hasilnya ke dalam database pribadi, melihat produk-produk dengan detail lengkap (termasuk harga asli dan diskon), serta mengelola data yang telah dikumpulkan.
+Aplikasi ini dibangun sebagai tugas akhir/proyek Web Programming untuk menunjukkan integrasi teknologi *backend* (Flask), web scraping (Selenium & BeautifulSoup), dan manajemen database (SQLAlchemy).
